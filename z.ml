@@ -311,9 +311,9 @@ let to_string n = format "%d" n
 
 external string_length : local_ string -> int @@ portable = "%string_length"
 
-let of_string s = of_substring_base 0 s ~pos:0 ~len:(string_length s)
-let of_substring s ~pos ~len = of_substring_base 0 s ~pos ~len
-let of_string_base base s = of_substring_base base s ~pos:0 ~len:(string_length s)
+let of_string (local_ s) = of_substring_base 0 s ~pos:0 ~len:(string_length s)
+let of_substring (local_ s) ~pos ~len = of_substring_base 0 s ~pos ~len
+let of_string_base base (local_ s) = of_substring_base base s ~pos:0 ~len:(string_length s)
 
 let ediv_rem a b =
   (* we have a = q * b + r, but [Big_int]'s remainder satisfies 0 <= r < |b|,
