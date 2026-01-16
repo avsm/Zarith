@@ -79,17 +79,17 @@ external of_int64: local_ int64 -> t = "ml_z_of_int64"
 external of_nativeint: local_ nativeint -> t = "ml_z_of_nativeint"
 (** Converts from a native (signed) integer. *)
 
-val of_int32_unsigned: int32 -> t
+val of_int32_unsigned: local_ int32 -> t
 (** Converts from a 32-bit integer, interpreted as an unsigned integer.
     @since 1.13
  *)
 
-val of_int64_unsigned: int64 -> t
+val of_int64_unsigned: local_ int64 -> t
 (** Converts from a 64-bit integer, interpreted as an unsigned integer.
     @since 1.13
  *)
 
-val of_nativeint_unsigned: nativeint -> t
+val of_nativeint_unsigned: local_ nativeint -> t
 (** Converts from a native integer, interpreted as an unsigned integer..
      @since 1.13
  *)
